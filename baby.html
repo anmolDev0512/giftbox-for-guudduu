@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Gift Box for Guudduu</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('./image/6ae5a2574c65af114f4246c5c5c42810.jpg') no-repeat center center;
+      background-size: contain;
+      background-position: top;
+    }
+
+    #box {
+      width: 220px;
+      height: 220px;
+      background: linear-gradient(145deg, #ff5f9e, #d73377);
+      position: relative;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2s infinite ease-in-out;
+      transition: transform 0.5s ease;
+      margin-top: 60px;
+    }
+
+    #box:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.02);
+      }
+    }
+
+    #lid {
+      width: 220px;
+      height: 55px;
+      background: linear-gradient(to right, #ffb3c6, #ffcce2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      transform-origin: top;
+      transition: transform 0.8s ease;
+      z-index: 3;
+    }
+
+    #ribbon {
+      position: absolute;
+      width: 30px;
+      height: 100%;
+      background: #fff;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 16px;
+      z-index: 2;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+    }
+
+    #hearts {
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-wrap: wrap;
+      width: 160px;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 1s ease 0.4s;
+    }
+
+    .heart {
+      font-size: 28px;
+      margin: 5px;
+      animation: float 2.5s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(-15px);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    #letter {
+      opacity: 0;
+      margin-top: 30px;
+      max-width: 800px;
+      background: linear-gradient(120deg, #ffe9f2, #e0f7ff);
+      padding: 35px;
+      border-radius: 28px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      transition: opacity 1s ease;
+      font-size: 20px;
+      line-height: 1.8;
+      text-align: center;
+      display: none;
+    }
+
+    #letter.show {
+      display: block;
+      animation: fadein 1.5s ease-in-out forwards;
+    }
+
+    #letter.hide {
+      animation: fadeout 0.8s ease-in-out forwards;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeout {
+      from {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      to {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    #letter::before {
+      content: '💌';
+      font-size: 42px;
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #letter p {
+      margin: 18px 0;
+    }
+
+    #letter p.quote {
+      font-weight: bold;
+      font-size: 24px;
+      margin: 24px 0;
+      color: #d61c84;
+      font-family: 'Georgia', serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <div id="lid"></div>
+    <div id="ribbon"></div>
+    <div id="hearts">
+      <div class="heart">❤️</div>
+      <div class="heart">❤️</div>
+      <div class="heart">❤️</div>
+      <div class="heart">❤️</div>
+      <div class="heart">❤️</div>
+      <div class="heart">❤️</div>
+    </div>
+  </div>
+
+  <div id="letter">
+    <p>Hey Guudduu 💌</p>
+    <p>
+      Aaj me bout miss kr rha tha mene socha chota sa … ek surprise🎁 de dun<br>
+      Par fir socha, tumhare liye toh koi normal surprice kaafi nahi.<br>
+      Isliye bhej diya maine ek <b> Imaginary box</b>,<br>
+      Jismein maine bhar diye wo sab <i>jo kabhi keh nahi paaya...
+    </p>
+    <p>
+      🗃️ <b>Box ke andar kya tha?</b><br>
+      💌 100 baar socha tumhe "I miss you" or "I Love You" bolu <br>
+      🌙 100 raaton mein tere online aane ka wait kiya<br>
+      📸 100 pal jinmein sirf tum thi meri soch mein<br>
+      🧸 100 baar socha bina wajah tujhe hug kar lun<br>
+      🎶 100 gaane sune, aur har gaana bola — “yeh wali tu hi hai...”<br>
+      💫 100 sapne, jismein tum kabhi princess thi, kabhi meri hoodie mein chhupi drama queen 👑<br>
+      🌸 100 khamoshiyaan, jinmein sirf tum thi — bina kuch kahe bhi sab keh jaane wali
+    </p>
+
+    <p style="font-weight:bold; text-align:center; font-size: 18px; margin: 15px 0;">
+      ✨ “Main tumhe shabdon se nahi, har heartbeat se soul se eyes se pyaar karta hoon.” ✨<br>
+
+      😞" Mai agr galat hu to mujhe smjhaya kar, mai sara ka sara tera hun tu apna haq jtaya kr"❤️🥹
+    </p>
+
+    <p style="font-weight:bold; text-align:center; font-size: 18px; margin: 15px 0;">
+
+      ਜਗੱਤ ਦੇ ਸੂਰਜ ਵੀ ਫਿੱਕੇ ਲੱਗਦੇ ☀️😔
+      ਤੇਰੇ ਤੋਂ ਬਿਨਾਂ...<br>
+
+      ਮੈਨੂੰ ਵੀ ਤਾਂ ਚੰਗੇ ਨਹੀਂ ਲੱਗਦੇ ਰੰਗ 🎨💔
+      ਤੇਰੇ ਤੋਂ ਬਿਨਾਂ...<br>
+
+      ਜਗੱਤ ਦੇ ਸੂਰਜ ਵੀ ਫਿੱਕੇ ਲੱਗਦੇ 🌅🥺
+      ਤੇਰੇ ਤੋਂ ਬਿਨਾਂ...<br>
+
+      ਤੈਨੂੰ ਵੀ ਤਾਂ ਚੰਗੇ ਨਹੀਂ ਲੱਗਦੇ ਰੰਗ 🌈😢
+      ਮੇਰੇ ਤੋਂ ਬਿਨਾਂ...<br>
+
+      ਲੱਖ ਦੁਨੀਆ ਬੋਲੇ ਕਰੋੜਾਂ ਵਾਰੀ 💬🌍
+      ਪਰ ਮੈਂ ਤਾਂ ਸੁਣਿਆ ਸਿਰਫ਼ ਤੈਨੂੰ 👂❤️<br>
+
+      ਮੈਨੂੰ ਹੋਰ ਕੁਝ ਨਹੀਂ ਚਾਹੀਦਾ 🙅‍♂️✨
+      ਮੇਰੀ ਤਾਂ ਸਾਰੀ ਦੁਨੀਆ ਤੂੰ ਹੀ ਏ 💖🌍
+
+
+    </p>
+
+    <p>
+      
+      <b>You know I can't live without you? And why do I share everything with you?<br>
+      "That’s why I share everything with you... because deep down, there’s one more reason — I can’t even imagine a moment without you 🥺💫. You’re the only one I trust with my heart, the only soul who feels like home to me 🤍. I know you’ll never break my trust, my heart, or the soft corners of my soul… and that’s why I love you — more than words, more than silence, more than forever 💖🌌."
+      </b> 
+   
+    </p>
+  </div>
+
+  <script>
+    const box = document.getElementById('box');
+    const lid = document.getElementById('lid');
+    const letter = document.getElementById('letter');
+    const hearts = document.getElementById('hearts');
+
+    let isOpen = false;
+
+    box.addEventListener('click', () => {
+      if (!isOpen) {
+        lid.style.transform = 'rotateX(-140deg)';
+        hearts.style.opacity = '1';
+        letter.classList.add('show');
+        letter.classList.remove('hide');
+      } else {
+        lid.style.transform = 'rotateX(0deg)';
+        hearts.style.opacity = '0';
+        letter.classList.remove('show');
+        letter.classList.add('hide');
+      }
+      isOpen = !isOpen;
+    });
+  </script>
+</body>
+
+</html>
